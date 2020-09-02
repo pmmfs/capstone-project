@@ -1,4 +1,4 @@
-# capstone-project
+
 # Capstone Project: Segment 1 Deliverables
 
 ## Overview
