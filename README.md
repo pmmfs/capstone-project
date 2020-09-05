@@ -8,8 +8,11 @@ investigates whether there is a correlation between peoples' mobility (e.g. to t
 
 A [provisional machine learning model](mobility/analysis/mobilityML.ipynb) was created to assess for correlation between mobility and counts of COVID-19 cases. Data was stored in an [SQLite database](mobility/resources/mobility_db.db) and queried for input into a neural network regression model. Strength of correlation was assessed using the resulting R-squared values. See Figure 1 for an entity relationship diagram (ERD) of the database. 
 
-#### Figure 1. Database ERD
+#### Figure 1. Database ERD - Mobility
 ![ERD](ERD.png)
+
+#### Figure 2. Database ERD - Regulation
+![](ERD_regulation.PNG)
 
 For effective group communication, protocols include weekly "Zoom" meetings, messaging through Slack, and file-sharing using GitHub and Google Drive. Group members are also assigned project roles and tasks at meetings. Post-meeting, this allows for members to break off into smaller groups for collaboration. Finally, [Technology.md](Technology.md) describes the software used in this project. 
 
@@ -17,6 +20,8 @@ For effective group communication, protocols include weekly "Zoom" meetings, mes
 ### Data
 - [regional_mobility.csv](mobility/resources/raw_data/regional_mobility.csv) (Google Community Mobility Reports)
 - [canada_esri.csv](mobility/resources/raw_data/canada_esri.csv) (Esri Canada)
+- [owid-covid-data(Aug31,2020).csv](regulation/Resources/raw/owid-covid-data(Aug31,2020).csv) (Our World in Data - COVID-19 database)
+- [OxCGRT_latest(Aug31,2020).csv](regulation/Resources/raw/OxCGRT_latest(Aug31,2020).csv) (University of Oxford - COVID-19 Government Response Tracker)
 
 ### Software
 See [Technology.md](Technology.md).
