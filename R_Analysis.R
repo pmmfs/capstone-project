@@ -58,3 +58,32 @@ t.test((sample_updated_merged_covid$new_cases),mu=mean((updated_merged_covid$new
 # With a significance level of 0.05 percent, our p-value is above our significance level. 
 #Therefore, we do not have sufficient evidence to reject the null hypothesis, and we would state that the 
 #two means are statistically similar.
+
+
+#Test For Correlation
+plt <- ggplot(merged_covid_stats_population,aes(x=new_deaths,y=StringencyIndex_updated)) #import dataset into ggplot2
+plt + geom_point() #create merged_covid_stats_population
+cor(merged_covid_stats_population$new_deaths,merged_covid_stats_population$StringencyIndex_updated) #calculate correlation coefficient
+
+lm(total_cases_updated ~ total_deaths_updated,merged_covid_stats_population) #create linear model
+summary(lm(total_cases_updated~total_deaths_updated,merged_covid_stats_population)) #summarize linear model
+
+# Output
+#Call:
+  #lm(formula = total_cases_updated ~ total_deaths_updated, data = merged_covid_stats_population)
+
+#Residuals:
+ # Min      1Q  Median      3Q     Max 
+#-902130    1995    2079    3735 2116003 
+
+#Coefficients:
+ # Estimate Std. Error t value Pr(>|t|)    
+#(Intercept)          -1.995e+03  5.952e+02  -3.351 0.000806 ***
+ # total_deaths_updated  2.338e+01  5.747e-02 406.837  < 2e-16 ***
+  ---
+  #Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+#Residual standard error: 108900 on 34735 degrees of freedom
+#(190 observations deleted due to missingness)
+#Multiple R-squared:  0.8265,	Adjusted R-squared:  0.8265 
+#F-statistic: 1.655e+05 on 1 and 34735 DF,  p-value: < 2.2e-16
