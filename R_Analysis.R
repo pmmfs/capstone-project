@@ -6,16 +6,19 @@ summarize_covid_stats <- covid_stats %>% group_by(continent) %>% summarize(avera
 plt <- ggplot(covid_stats,aes(x=continent)) #import dataset into ggplot2
 plt + geom_bar() #plot a bar plot
 
-# Sicing data sets based on index and using pairs function to correlate all data 
+# Slice data sets based on index and using pairs function to correlate all data 
 covid_stats_cor <-covid_stats[,5:10]
 pairs(covid_stats_cor)
 
+# Slice data sets based on index and using pairs function to correlate all data 
 covid_stats_ma_cor <- covid_stats_ma[,5:13]
 pairs(covid_stats_ma_cor)
 
+# Slice data sets based on index and using pairs function to correlate all data 
 govt_reg_cor <- government_regulation[,4:8]
 pairs(govt_reg_cor)
 
+# Slice data sets based on index and using pairs function to correlate all data 
 merged_covid_cor <- merged_covid[,5:15]
 pairs(merged_covid_cor)
 
@@ -30,3 +33,11 @@ ggplot(merged_covid_new,aes(x=ContainmentHealthIndex_updated)) + geom_density() 
 
 # Qualitative test for Normality for noisy data
 shapiro.test(merged_covid_new$StringencyLegacyIndex_updated)
+
+# Random Sampling
+
+sample_updated_merged_covid <- updated_merged_covid %>% sample_n(50) #randomly sample 50 data points
+plt <- ggplot(sample_updated_merged_covid,aes(x=(GovernmentResponseIndex_updated))) #import dataset into ggplot2
+plt + geom_density() #visualize distribution using density plot
+
+# T-Test- To check for statistical difference between sample and population dataset
