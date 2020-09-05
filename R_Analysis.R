@@ -6,19 +6,19 @@ summarize_covid_stats <- covid_stats %>% group_by(continent) %>% summarize(avera
 plt <- ggplot(covid_stats,aes(x=continent)) #import dataset into ggplot2
 plt + geom_bar() #plot a bar plot
 
-# Slice data sets based on index and using pairs function to correlate all data 
+# Slice data based on index and using pairs function to correlate all data 
 covid_stats_cor <-covid_stats[,5:10]
 pairs(covid_stats_cor)
 
-# Slice data sets based on index and using pairs function to correlate all data 
+# Slice data based on index and using pairs function to correlate all data 
 covid_stats_ma_cor <- covid_stats_ma[,5:13]
 pairs(covid_stats_ma_cor)
 
-# Slice data sets based on index and using pairs function to correlate all data 
+# Slice data based on index and using pairs function to correlate all data 
 govt_reg_cor <- government_regulation[,4:8]
 pairs(govt_reg_cor)
 
-# Slice data sets based on index and using pairs function to correlate all data 
+# Slice data  based on index and using pairs function to correlate all data 
 merged_covid_cor <- merged_covid[,5:15]
 pairs(merged_covid_cor)
 
