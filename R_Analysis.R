@@ -55,3 +55,6 @@ t.test((sample_updated_merged_covid$new_cases),mu=mean((updated_merged_covid$new
 #sample estimates:
 #  mean of x 
 #7712.94 
+# With a significance level of 0.05 percent, our p-value is above our significance level. 
+#Therefore, we do not have sufficient evidence to reject the null hypothesis, and we would state that the 
+#two means are statistically similar.
