@@ -41,3 +41,17 @@ plt <- ggplot(sample_updated_merged_covid,aes(x=(GovernmentResponseIndex_updated
 plt + geom_density() #visualize distribution using density plot
 
 # T-Test- To check for statistical difference between sample and population dataset
+
+t.test((sample_updated_merged_covid$new_cases),mu=mean((updated_merged_covid$new_cases))) #compare sample versus population means
+
+# Output
+#One Sample t-test
+
+#data:  (sample_updated_merged_covid$new_cases)
+#t = 0.3224, df = 49, p-value = 0.7485
+#alternative hypothesis: true mean is not equal to 6963.026
+#95 percent confidence interval:
+ # 3038.544 12387.336
+#sample estimates:
+#  mean of x 
+#7712.94 
