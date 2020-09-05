@@ -12,7 +12,7 @@ A [provisional machine learning model](mobility/analysis/mobilityML.ipynb) was c
 ![ERD](ERD.png)
 
 #### Figure 2. Database ERD - Regulation
-![](ERD_regulation.PNG)
+![](ERD_regulation.png)
 
 For effective group communication, protocols include weekly "Zoom" meetings, messaging through Slack, and file-sharing using GitHub and Google Drive. Group members are also assigned project roles and tasks at meetings. Post-meeting, this allows for members to break off into smaller groups for collaboration. Finally, [Technology.md](Technology.md) describes the software used in this project. 
 
