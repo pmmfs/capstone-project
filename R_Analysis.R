@@ -61,9 +61,10 @@ t.test((sample_updated_merged_covid$new_cases),mu=mean((updated_merged_covid$new
 
 
 #Test For Correlation
-plt <- ggplot(merged_covid_stats_population,aes(x=new_deaths,y=StringencyIndex_updated)) #import dataset into ggplot2
+plt <- ggplot(merged_covid_stats_population,aes(x=StringencyIndex_updated,y=new_deaths)) #import dataset into ggplot2
 plt + geom_point() #create merged_covid_stats_population
 cor(merged_covid_stats_population$new_deaths,merged_covid_stats_population$StringencyIndex_updated) #calculate correlation coefficient
+
 
 lm(total_cases_updated ~ total_deaths_updated,merged_covid_stats_population) #create linear model
 summary(lm(total_cases_updated~total_deaths_updated,merged_covid_stats_population)) #summarize linear model
@@ -87,3 +88,9 @@ summary(lm(total_cases_updated~total_deaths_updated,merged_covid_stats_populatio
 #(190 observations deleted due to missingness)
 #Multiple R-squared:  0.8265,	Adjusted R-squared:  0.8265 
 #F-statistic: 1.655e+05 on 1 and 34735 DF,  p-value: < 2.2e-16
+  
+model <- lm(total_cases_updated ~ total_deaths_updated,merged_covid_stats_population)#create linear model
+yvals <- model$coefficients['total_cases_updated']*merged_covid_stats_population$total_cases_updated + model$coefficients['(Intercept)'] #determine y-axis values from linear model
+
+plt <- ggplot(merged_covid_stats_population,aes(x=total_cases_updated,y=total_deaths_updated)) #import dataset into ggplot2
+plt + geom_point() + geom_line(aes(y=yvals), color = "red") #plot scatter and linear model
