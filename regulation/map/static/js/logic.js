@@ -87,13 +87,43 @@ pointToLayer: function(feature, latlng) {
   }).addTo(all_locations);
 // Adding the all locations layer to our map
   all_locations.addTo(map);
+// Reading total death data
+  d3.json("https://raw.githubusercontent.com/pmmfs/capstone-project/FA-2/regulation/Resources/Top5TotalDeaths.json").then(function(data) {
+    var geojsonMarkerOptions = {
+      radius: 10,
+      fillColor: "blue",
+      color: "white",
+      weight: 1,
+      opacity: 1,
+      fillOpacity: 0.8
+    };
+    
+    // Creating a GeoJSON layer with the retrieved data.
+    L.geoJson(data, {
+    // We turn each feature into a circleMarker on the map.
+    pointToLayer: function(feature, latlng) {
+                  return L.circleMarker(latlng, geojsonMarkerOptions);
+                   
+            },
+         // We create a popup for each circleMarker to display the magnitude and
+      //  location of the earthquake after the marker has been created and styled.
+      onEachFeature: function(feature, layer) {
+          layer.bindPopup("Continent: " + feature.properties.continent + "<br>Country: " + feature.properties.location);
+        }
+      
+      }).addTo(all_locations);
+    // Adding the all locations layer to our map
+      all_locations.addTo(map);
+    
+    
 
-// Retrieve the Tectonic Plate GeoJSON data.
-d3.json("https://raw.githubusercontent.com/fraxen/tectonicplates/master/GeoJSON/PB2002_boundaries.json").then(function(data) {
-  // Creating a GeoJSON layer with the retrieved data.
-  L.geoJson(data,{color:"#ff7d52", weight:4, opacity: 2.0}).addTo(tectonicplate);
-  tectonicplate.addTo(map);
-});
+
+
+
+
+
+
+
 
 
 
