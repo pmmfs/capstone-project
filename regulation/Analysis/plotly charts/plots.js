@@ -60,3 +60,43 @@ var layout3 = {
     
    };
 Plotly.newPlot("plotArea-NC", data3, layout3);
+
+// _______________________________STRINGENCY INDEX COMPONENT____________________________________
+
+// ____________________Total Deaths______________________________
+var trace4 = {
+    labels: ['School closing',
+    'Workplace closing','Cancel public events','Restrictions on gatherings','Close public transport',
+    'Stay at home requirements','Restrictions on internal movement','International travel controls', 
+     'Public information campaigns'],
+    values: [8.64, 11.32,  8.44,  7.08,  5.33,
+        14.62, 20.13, 21.17,  3.27],
+    marker:{
+        colors:['gold', 'mediumturquoise', 'darkorange','teal','lightgreen','coral','tomato']},
+    'type': 'pie'    
+   };
+var data4 = [trace4];
+var layout4 = {
+    title: "Feature Importance for Total Death",
+    
+   };
+Plotly.newPlot("plotArea-STD", data4, layout4);
+
+// ___________________Total Cases_______________________________________
+
+var trace1 = {
+    labels: ['School closing','Workplace closing','Cancel public events','Restrictions on gatherings',
+    'Close public transport','Stay at home requirements','Restrictions on internal movement',
+    'International travel controls','Public information campaigns'],
+    values: [8.44 , 12.00 ,  7.78,  7.33,  5.45,
+        14.71, 19.88, 21.24,  3.19],
+    marker:{
+        colors:['gold', 'mediumturquoise', 'darkorange', 'coral','tomato','teal','lightgreen']},
+    'type': 'pie'    
+   };
+var data1 = [trace1];
+var layout1 = {
+    title: "Feature Importance for Total Cases",
+    
+   };
+Plotly.newPlot("plotArea-STC", data1, layout1);
