@@ -21,7 +21,7 @@ See "Presentation.pptx" for descriptions of the data exploration and analysis.
 Data was stored in a SQLite database ([covid_db.db](regulation/Resources/covid_db.db)) to be queried for input into machine learning models. Figure 1 shows an entity relationship diagram (ERD) of the database.
 
 #### Figure 1. Database ERD
-![](ERD_regulation.png)
+![](ERD.png)
 
 ## Machine Learning
 Sami & Muzznah to revise this section:
@@ -49,7 +49,7 @@ Part 4 ("Predictions") will contain a pie chart showing feature importances for 
 
 ## Resources
 ### Data
-- [regional_mobility.csv](mobility/resources/raw_data/regional_mobility.csv) (Google Community Mobility Reports)
+- [regional_mobility.csv](regulation/Resources/raw/regional_mobility.csv) (Google Community Mobility Reports)
 - [owid-covid-data(Aug31,2020).csv](regulation/Resources/raw/owid-covid-data(Aug31,2020).csv) (Our World in Data - COVID-19 database)
 - [OxCGRT_latest(Aug31,2020).csv](regulation/Resources/raw/OxCGRT_latest(Aug31,2020).csv) (University of Oxford - COVID-19 Government Response Tracker)
 
