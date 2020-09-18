@@ -18,7 +18,7 @@ Questions the project hoped to answer were the following:
 ## Analysis
 See "Presentation.pptx" for descriptions of the data exploration and analysis. 
 
-To view the code used to find correlations between feature and target variables, and to create an unsupML model, visit the [analysis_correlations_unsupML directory](analysis_correlations_unsupML). Jupyter notebooks are numbered from 1 to 11, which follows the progression of the analysis. Except for files containing raw data (see "Resources" below), the CSV files in the folder are intermediate files necessary for the progression of the analysis. Image files are byproducts of the notebooks and were used in "Presentation.pptx".
+To view the code used to find correlations between feature and target variables, and to create an unsupML model, visit the [analysis_correlations_unsupervisedML directory](analysis_correlations_unsupervisedML). Jupyter notebooks are numbered from 1 to 11, which follows the progression of the analysis. Except for files containing raw data (see "Resources" below), the CSV files in the folder are intermediate files necessary for the progression of the analysis. Image files are byproducts of the notebooks and were used in "Presentation.pptx".
 
 ## Database
 Data was stored in a SQLite database ([covid_db.db](regulation/Resources/covid_db.db)) to be queried for input into machine learning models. Figure 1 shows an entity relationship diagram (ERD) of the database.
@@ -52,7 +52,7 @@ Part 4 ("Predictions") will contain a pie chart showing feature importances for 
 
 ## Resources
 ### Data
-- [regional_mobility.csv](regulation/Resources/raw/regional_mobility.csv) (Google Community Mobility Reports)
+- [regional_mobility.csv](analysis_correlations_unsupervisedML/regional_mobility.csv) (Google Community Mobility Reports)
 - [owid-covid-data(Aug31,2020).csv](regulation/Resources/raw/owid-covid-data(Aug31,2020).csv) (Our World in Data - COVID-19 database)
 - [OxCGRT_latest(Aug31,2020).csv](regulation/Resources/raw/OxCGRT_latest(Aug31,2020).csv) (University of Oxford - COVID-19 Government Response Tracker)
 
