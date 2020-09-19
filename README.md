@@ -1,6 +1,7 @@
 # Capstone Project: Segment 2 Deliverables
 
 ## Overview
+
 Our group (Martin Kaminskyj, Sami Elkhayri, Muzznah Ansari, Femi Adeleke, and Patricia Lan) chose to perform data analysis on coronavirus disease of 2019 (COVID-19). The topic of COVID-19 was chosen because it is a current, global issue with extensive socioeconomic impact, and public data is available. Thus, many approaches to analysis are possible. 
 
 This project evaluates government measures to contain the spread of COVID-19, starting from January 1, 2020 to August 31, 2020. The dataset from Oxford university's Blavatnik School of Government contained indices that categorized government responses to COVID-19, Google Community Mobility Reports recorded changes in people's mobility, and Our World in Data provided medical data on COVID-19 (e.g. number of confirmed cases and deaths).
@@ -14,6 +15,7 @@ Questions the project hoped to answer were the following:
 4) Supervised machine learning (ML):
     a) Can a model accurately predict future total cases/deaths based on feature variables?
     b) Which feature variables contribute the most to the model?
+5)  High Risk Continent: Which continent poses the most risk  based on age variation, total cases and extreme poverty rating.
 
 ## Analysis
 
