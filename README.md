@@ -11,7 +11,7 @@ Questions the project hoped to answer were the following:
     a) Which measures resulted in desirable outcomes?
     b) Which stringency measures are associated with lower rate of increase of total cases? Total deaths?
 3) Can an unsupervised machine learning (unsupML) model group countries by all variables to create meaningful group profiles? (Do group profiles correlate with desirable outcomes?)
-4)  High Risk Continent: Which continent pose the most risk to Canada based on age variation, total cases and extreme poverty rating.
+4)  High Risk Continent: Which continent poses the most risk to Canada based on age variation, total cases and extreme poverty rating.
 5) Supervised machine learning (supML):
     a) Can a model accurately predict future total cases/deaths based on feature variables?
     b) Which feature variables contribute the most to the model?
