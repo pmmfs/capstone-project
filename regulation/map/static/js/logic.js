@@ -78,8 +78,7 @@ pointToLayer: function(feature, latlng) {
               return L.circleMarker(latlng, geojsonMarkerOptions);
                
         },
-     // We create a popup for each circleMarker to display the magnitude and
-  //  location of the earthquake after the marker has been created and styled.
+     
   onEachFeature: function(feature, layer) {
       layer.bindPopup("Continent: " + feature.properties.continent + "<br>Country: " + feature.properties.location);
     }
@@ -92,7 +91,7 @@ pointToLayer: function(feature, latlng) {
   d3.json("https://raw.githubusercontent.com/pmmfs/capstone-project/FA-2/regulation/Resources/Top5TotalDeaths.geojson").then(function(data) {
     var geojsonMarkerOptions = {
       radius: 10,
-      fillColor: "blue",
+      fillColor: "red",
       color: "white",
       weight: 1,
       opacity: 1,
@@ -120,7 +119,7 @@ pointToLayer: function(feature, latlng) {
   d3.json("https://raw.githubusercontent.com/pmmfs/capstone-project/FA-2/regulation/Resources/Top5StringencyIndex.geojson").then(function(data) {
     var geojsonMarkerOptions = {
       radius: 10,
-      fillColor: "green",
+      fillColor: "blue",
       color: "white",
       weight: 1,
       opacity: 1,
