@@ -10,16 +10,16 @@ Questions the project hoped to answer were the following:
 2) Government measures:
     a) Which measures resulted in desirable outcomes?
     b) Which stringency measures are associated with lower rate of increase of total cases? Total deaths?
-3) Can an unsupervised machine learning (unsupML) model group countries by all variables to create meaningful group profiles? (Do group profiles correlate with desirable outcomes?)
-4)  High Risk Continent: Which continent poses the most risk to Canada based on age variation, total cases and extreme poverty rating.
-5) Supervised machine learning (supML):
+3) Can an unsupervised machine learning (ML) model group countries by all variables to create meaningful group profiles? (Do group profiles correlate with desirable outcomes?)
+4) Supervised machine learning (ML):
     a) Can a model accurately predict future total cases/deaths based on feature variables?
     b) Which feature variables contribute the most to the model?
 
 ## Analysis
-See "Presentation.pptx" for descriptions of the data exploration and analysis. 
 
-To view the code used to find correlations between feature and target variables, and to create an unsupML model, visit the [analysis_correlations_unsupervisedML directory](analysis_correlations_unsupervisedML). Jupyter notebooks are numbered from 1 to 11, which follows the progression of the analysis. Except for files containing raw data (see "Resources" below), the CSV files in the folder are intermediate files necessary for the progression of the analysis. Image files are byproducts of the notebooks and were used in "Presentation.pptx".
+View the [Google Slides presentation](https://drive.google.com/file/d/1HMuLkLnpWYkOisW_-dmM1ByNWo0DIhGJ/view?usp=sharing) for descriptions of the data exploration and analysis. 
+
+To view the code used to find correlations between feature and target variables, and to create an unsupervised ML model, visit the [analysis_correlations_unsupervisedML directory](analysis_correlations_unsupervisedML). Jupyter notebooks are numbered from 1 to 11, which follows the progression of the analysis. Except for files containing raw data (see "Resources" below), the CSV files in the folder are intermediate files necessary for the progression of the analysis. Image files are byproducts of the notebooks and were used in [Google Slides presentation](https://drive.google.com/file/d/1HMuLkLnpWYkOisW_-dmM1ByNWo0DIhGJ/view?usp=sharing).
 
 To view the code used to analyse the correlation between the timing and severity of each countries initial stringency efforts and their outcome of total cases and deaths as a percentage of population, visit the [analysis_gov_regulation_impact directory](analysis_gov_regulation_impact).
 
@@ -32,18 +32,73 @@ Data was stored in a SQLite database ([covid_db.db](regulation/Resources/covid_d
 ![](ERD.png)
 
 ## Machine Learning
-Sami & Muzznah to revise this section:
 
-Supervised machine learning (supML) models were created to predict target variables (total cases and total deaths) based on feature variables (population density, median age, etc.). At the same time, the models allowed for correlation analysis between feature and target variables. Models included neural network, Support Vector Regression (SVR), and Random Forest Regressor. R-squared values were used to assess for strengths of correlations between feature and target variables. Model accuracy was assessed by comparing R-squared values between training and testing sets. [Click here](regulation/Analysis/FINAL_government_regulation_impact_machine_learning.ipynb) for the programming code for the model.
+Supervised machine learning(ML) models were created to predict target variables (total cases and total deaths) based on the following feature variables :
+- Population
+- Population density
+- Median age
+- Current total cases
+- Current total death
+- School Closing
+- Workplace Closing
+- Cancel public events
+- Restriction on gatherings
+- Close public transport
+- Stay at home requirement
+- Restriction on internal movement
+- International travel controls
+- Public information Campaigns
+- Income support
+
+Models included neural network, Support Vector Regression (SVR), and Random Forest Regressor. R-squared values were used to assess for the strength of correlations between feature and target variables. Model accuracy was assessed by comparing R-squared values between training and testing sets.
+
+### Data Preprocessing
+
+For selection and preprocessing of features, their data types and correlations were checked. Once the features were selected, both the feature variables, and targets were scaled. 
+### Feature Selection
+Feature selection was an iterative process whereby the initial selected features were adjusted according to the outputted feature importance /contribution by the RandomForestRegressor model. For more detail on the decision-making process check the following notebooks:
+1. FeatureSelection_FeatureImportance_totalcases.ipynb
+2. FeatureSelection_FeatureImportance_totaldeaths.ipynb
+   The above notebooks helped us determine the best features and model for further analysis.
+
+3. HealthEco_Component_Feature_Importance.ipynb
+4. Stringency_Component_Feature_Importance.ipynb
+The above notebooks were used to determine the importance of the individual components of the Stringency Index, HealthSupport Index, and EconomicSupport Index. Based on the findings, stay at home requirement, a restriction on internal movement and international travel control from the Stringency Index, in addition to income support (EconomicSupport Index) were the most significant features for the selected ML model.
+### Feature Engineering
+
+The original dataset contained, total deaths and total cases for a given date. To predict future total cases and deaths, 12 new columns were created, three each for 30,45,60 and 75 days out. The columns were date plus a time-delta e.g. 30 days, total deaths at 30 days and total cases at 30 days. For coding detail check [ML Notebook]( Stringency_Component_total_cases_deaths.ipynb)
+### Training and Testing Set
+
+The 95% of the data was used for training and 5% of the data was kept for testing purposes. For details check [ML Notebook]( Stringency_Component_total_cases_deaths.ipynb)
+
+### Choice of Model
+
+The models tried were, SVR, RandomForestRegressor and Neural Networks. Out of the three we decided to use RandomForestRegressor for understanding feature contribution/importance and Neural Networks for predicting future target values.
+### Reasons
+
+#### Benefits
+* High R2 values
+* Ability to extrapolate from a given dataset
+* Neural Network is a flexible model that adapts itself to the shape of the data and can dynamically pick the best regression (i.e. logistic, linear, polynomial etc.)  for a particular data.
+#### Limitations
+
+* Neural Networks require specialized software to run and are computationally intensive.
+* Black box: It does not explain how the results were achieved.
+
+
+
 
 ## Communication Protocols
+
 For effective group communication, protocols included weekly "Zoom" meetings, messaging through Slack, and file-sharing using GitHub and Google Drive. Group members were also assigned project roles and tasks at meetings. Post-meeting, this allowed for members to break off into smaller groups for collaboration. Trello was used to keep track of work in progress and completed tasks. 
 
 ## Software
+
 See [Technology.md](Technology.md) for a description of the software used in this project, including software for the dashboard.
 
 ## Dashboard
-Refer to "Presentation.pptx" for a blueprint of the dashboard's storyboard. 
+
+Refer to the [Google Slides presentation](https://drive.google.com/file/d/1HMuLkLnpWYkOisW_-dmM1ByNWo0DIhGJ/view?usp=sharing) for a blueprint of the dashboard's storyboard. 
 
 The dashboard consists of 4 parts which all contain interactive elements. All charts and maps will be interactive as they will be created with plotly and Leaflet.
 
@@ -56,13 +111,16 @@ Part 3 ("The Outcomes") will contain a triangular heatmap showing correlations b
 Part 4 ("Predictions") will contain a pie chart showing feature importances for the supervised machine learning model. Also, there will be a Leaflet map that visualizes predictions (total cases/deaths) from the model. Predictions will be visualized as circular pop-ups for each country, with the radius and colour of each circle corresponding to the count of total cases/deaths (as a percentage of the population).
 
 ## Resources
+
 ### Data
 - [regional_mobility.csv](analysis_correlations_unsupervisedML/regional_mobility.csv) (Google Community Mobility Reports)
 - [owid-covid-data(Aug31,2020).csv](analysis_gov_regulation_impact/Resources/raw/owid-covid-data(Aug31,2020).csv) (Our World in Data - COVID-19 database)
 - [OxCGRT_latest(Aug31,2020).csv](analysis_gov_regulation_impact/Resources/raw/OxCGRT_latest(Aug31,2020).csv) (University of Oxford - COVID-19 Government Response Tracker)
 
 ### Software
+
 See [Technology.md](Technology.md).
 
 ### Other
-Presentation.pptx (Detailed information about the project.)
+
+[Google Slides presentation](https://drive.google.com/file/d/1HMuLkLnpWYkOisW_-dmM1ByNWo0DIhGJ/view?usp=sharing) (Provides detailed information about the project.)
