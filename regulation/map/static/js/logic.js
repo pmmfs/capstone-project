@@ -122,7 +122,7 @@ pointToLayer: function(feature, latlng) {
       fillColor: "blue",
       color: "white",
       weight: 1,
-      opacity: 1,
+      opacity: 2,
       fillOpacity: 0.8
     };
     
