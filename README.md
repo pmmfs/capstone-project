@@ -27,8 +27,8 @@ To view the code used to analyse the correlation between the timing and severity
 
 To view code used to determine the Continent poses the highest risk based on age variation, total cases and poverty level, visit the [analysis_median_age_per_continent directory](analysis_median_age_per_continent). 
 
-## Database
-Data was stored in a SQLite database ([covid_db.db](regulation/Resources/covid_db.db)) to be queried for input into machine learning models. Figure 1 shows an entity relationship diagram (ERD) of the database.
+## Database 
+Data was stored in a SQLite database ([covid_db.db](analysis_gov_regulation_impact/Resources/covid_db.db)) to be queried for input into machine learning models. Figure 1 shows an entity relationship diagram (ERD) of the database.
 
 #### Figure 1. Database ERD
 ![](ERD.png)
@@ -68,10 +68,10 @@ Feature selection was an iterative process whereby the initial selected features
 The above notebooks were used to determine the importance of the individual components of the Stringency Index, HealthSupport Index, and EconomicSupport Index. Based on the findings, stay at home requirement, a restriction on internal movement and international travel control from the Stringency Index, in addition to income support (EconomicSupport Index) were the most significant features for the selected ML model.
 ### Feature Engineering
 
-The original dataset contained, total deaths and total cases for a given date. To predict future total cases and deaths, 12 new columns were created, three each for 30,45,60 and 75 days out. The columns were date plus a time-delta e.g. 30 days, total deaths at 30 days and total cases at 30 days. For coding detail check [ML Notebook]( Stringency_Component_total_cases_deaths.ipynb)
+The original dataset contained, total deaths and total cases for a given date. To predict future total cases and deaths, 12 new columns were created, three each for 30,45,60 and 75 days out. The columns were date plus a time-delta e.g. 30 days, total deaths at 30 days and total cases at 30 days. For coding detail check [ML Notebook]( analysis_gov_regulation_impact/Stringency_Component_total_cases_deaths.ipynb)
 ### Training and Testing Set
 
-The 95% of the data was used for training and 5% of the data was kept for testing purposes. For details check [ML Notebook]( Stringency_Component_total_cases_deaths.ipynb)
+The 95% of the data was used for training and 5% of the data was kept for testing purposes. For details check [ML Notebook]( analysis_gov_regulation_impact/Stringency_Component_total_cases_deaths.ipynb)
 
 ### Choice of Model
 
