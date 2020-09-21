@@ -25,7 +25,7 @@ To view the code used to find correlations between feature and target variables,
 
 To view the code used to analyse the correlation between the timing and severity of each countries initial stringency efforts and their outcome of total cases and deaths as a percentage of population, visit the [analysis_gov_regulation_impact directory](analysis_gov_regulation_impact).
 
-To view code used to determine the Continent poses the highest risk based on age variation, total cases and poverty level, visit the [analysis_median_age_per_continent directory](analysis_median_age_per_continent). 
+To view the code used to determine the continent that poses the highest risk based on age variation, total cases and poverty level, visit the [analysis_median_age_per_continent directory](analysis_median_age_per_continent). 
 
 ## Database 
 Data was stored in a SQLite database ([covid_db.db](analysis_gov_regulation_impact/Resources/covid_db.db)) to be queried for input into machine learning models. Figure 1 shows an entity relationship diagram (ERD) of the database.
@@ -59,12 +59,12 @@ Models included neural network, Support Vector Regression (SVR), and Random Fore
 For selection and preprocessing of features, their data types and correlations were checked. Once the features were selected, both the feature variables, and targets were scaled. 
 ### Feature Selection
 Feature selection was an iterative process whereby the initial selected features were adjusted according to the outputted feature importance /contribution by the RandomForestRegressor model. For more detail on the decision-making process check the following notebooks:
-1. FeatureSelection_FeatureImportance_totalcases.ipynb
-2. FeatureSelection_FeatureImportance_totaldeaths.ipynb
+1. [FeatureSelection_FeatureImportance_totalcases.ipynb](analysis_gov_regulation_impact/FeatureSelection_FeatureImportance_totalcases.ipynb)
+2. [FeatureSelection_FeatureImportance_totaldeaths.ipynb](analysis_gov_regulation_impact/FeatureSelection_FeatureImportance_totaldeaths.ipynb)
    The above notebooks helped us determine the best features and model for further analysis.
 
-3. HealthEco_Component_Feature_Importance.ipynb
-4. Stringency_Component_Feature_Importance.ipynb
+3. [HealthEco_Component_Feature_Importance.ipynb](analysis_gov_regulation_impact/HealthEco_Component_Feature_Importance.ipynb)
+4. [Stringency_Component_Feature_Importance.ipynb](analysis_gov_regulation_impact/Stringency_Component_Feature_Importance.ipynb)
 The above notebooks were used to determine the importance of the individual components of the Stringency Index, HealthSupport Index, and EconomicSupport Index. Based on the findings, stay at home requirement, a restriction on internal movement and international travel control from the Stringency Index, in addition to income support (EconomicSupport Index) were the most significant features for the selected ML model.
 ### Feature Engineering
 
