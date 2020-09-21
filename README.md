@@ -59,12 +59,12 @@ Models included neural network, Support Vector Regression (SVR), and Random Fore
 For selection and preprocessing of features, their data types and correlations were checked. Once the features were selected, both the feature variables, and targets were scaled. 
 ### Feature Selection
 Feature selection was an iterative process whereby the initial selected features were adjusted according to the outputted feature importance /contribution by the RandomForestRegressor model. For more detail on the decision-making process check the following notebooks:
-1. FeatureSelection_FeatureImportance_totalcases.ipynb
-2. FeatureSelection_FeatureImportance_totaldeaths.ipynb
+1. [analysis_gov_regulation_impact/FeatureSelection_FeatureImportance_totalcases.ipynb](FeatureSelection_FeatureImportance_totalcases.ipynb)
+2. [analysis_gov_regulation_impact/FeatureSelection_FeatureImportance_totaldeaths.ipynb]()
    The above notebooks helped us determine the best features and model for further analysis.
 
-3. HealthEco_Component_Feature_Importance.ipynb
-4. Stringency_Component_Feature_Importance.ipynb
+3. [analysis_gov_regulation_impact/HealthEco_Component_Feature_Importance.ipynb](HealthEco_Component_Feature_Importance.ipynb])
+4. [analysis_gov_regulation_impact/Stringency_Component_Feature_Importance.ipynb](Stringency_Component_Feature_Importance.ipynb)
 The above notebooks were used to determine the importance of the individual components of the Stringency Index, HealthSupport Index, and EconomicSupport Index. Based on the findings, stay at home requirement, a restriction on internal movement and international travel control from the Stringency Index, in addition to income support (EconomicSupport Index) were the most significant features for the selected ML model.
 ### Feature Engineering
 
