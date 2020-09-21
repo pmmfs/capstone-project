@@ -98,8 +98,9 @@ class ml:
         train = self.nn_model.fit(self.X_train_scaled, self.y_train_scaled, epochs=self.epochs)
         
         # Set the name of the graph file to be stored on disk
-        fig_name = "../Resources/graphs/target-" + self.target + ",period:" + self.period + ",feature_set" + str(self.feature_set.replace(" ",""))
-            
+        fig_name = "Resources/graphs/target-" + self.target + ",period:" + self.period + ",feature_set" + str(self.feature_set)
+        fig_name = fig_name.replace(" ","")    
+        
         # Plot the train and test loss function and save the plot to disk
         plt.plot(train.history["loss"])
         plt.title(self.title)
