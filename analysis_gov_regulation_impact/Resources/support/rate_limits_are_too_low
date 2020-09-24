@@ -1,0 +1,3 @@
+iopub rate limits are too low by default, for visualization-heavy projects
+
+https://github.com/jupyter/notebook/issues/2287
