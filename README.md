@@ -31,7 +31,7 @@ To view the code used to determine the continent that poses the highest risk bas
 Data was stored in a SQLite database ([covid_db.db](analysis_gov_regulation_impact/Resources/covid_db.db)) to be queried for input into machine learning models. Figure 1 shows an entity relationship diagram (ERD) of the database.
 
 #### Figure 1. Database ERD
-![](ERD.png)
+![](ERD_final.png)
 
 ## Machine Learning
 
