@@ -85,7 +85,7 @@ The models tried were, SVR, RandomForestRegressor and Neural Networks. Out of th
 * Black box: It does not explain how the results were achieved.
 
 ## Software
-See [Technology.md](Technology.md) for a description of the technologies, languages, tools, and algorithms used in this project.
+See [Technology.md](Technology.md) for a description of the technologies, languages, tools, and algorithms used in this project. [Requirements.txt](Requirements.txt) contains a list of the packages/modules/libraries needed to run the Jupyter Notebooks (in "analysis_gov_regulation_impact") for the supervised machine learning model. 
 
 ## Dashboard
 [Click here](https://pmmfs.github.io/) to view the dashboard. Files used to create the dashboard are available in the [dashboard repo](https://github.com/pmmfs/pmmfs.github.io). 
@@ -98,7 +98,7 @@ See [Technology.md](Technology.md) for a description of the technologies, langua
 - [OxCGRT_latest(Aug31,2020).csv](analysis_gov_regulation_impact/Resources/raw/OxCGRT_latest(Aug31,2020).csv) (University of Oxford - COVID-19 Government Response Tracker)
 
 ### Software
-See [Technology.md](Technology.md).
+See [Technology.md](Technology.md) and [Requirements.txt](Requirements.txt).
 
 ### Other
 - [The dashboard](https://pmmfs.github.io/)
