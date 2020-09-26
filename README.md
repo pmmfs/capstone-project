@@ -17,9 +17,9 @@ Questions the project hoped to answer were the following:
 5)  High Risk Continent: Which continent poses the most risk  based on age variation, total cases and extreme poverty rating.
 
 ## Analysis
-View the [Google Slides presentation](https://drive.google.com/file/d/1HMuLkLnpWYkOisW_-dmM1ByNWo0DIhGJ/view?usp=sharing) for descriptions of the data exploration and analysis. 
+View the [Google Slides presentation](https://docs.google.com/presentation/d/1sH4ivyYJxLH2zuCJpQTzjlnWvE8RgMRwBxGjeOCTDVo/edit?usp=sharing) for descriptions of the data exploration and analysis. 
 
-To view the code used to find correlations between feature and target variables, and to create an unsupervised ML model, visit the [analysis_correlations_unsupervisedML directory](analysis_correlations_unsupervisedML). Jupyter notebooks are numbered from 1 to 11, which follows the progression of the analysis. Except for files containing raw data (see "Resources" below), the CSV files in the folder are intermediate files necessary for the progression of the analysis. Image files are byproducts of the notebooks and were used in [Google Slides presentation](https://drive.google.com/file/d/1HMuLkLnpWYkOisW_-dmM1ByNWo0DIhGJ/view?usp=sharing).
+To view the code used to find correlations between feature and target variables, and to create an unsupervised ML model, visit the [analysis_correlations_unsupervisedML directory](analysis_correlations_unsupervisedML). Jupyter notebooks are numbered from 1 to 11, which follows the progression of the analysis. Except for files containing raw data (see "Resources" below), the CSV files in the folder are intermediate files necessary for the progression of the analysis. Image files are byproducts of the notebooks and were used in [Google Slides presentation](https://docs.google.com/presentation/d/1sH4ivyYJxLH2zuCJpQTzjlnWvE8RgMRwBxGjeOCTDVo/edit?usp=sharing).
 
 To view the code used to analyse the correlation between the timing and severity of each countries initial stringency efforts and their outcome of total cases and deaths as a percentage of population, visit the [analysis_gov_regulation_impact directory](analysis_gov_regulation_impact).
 
@@ -103,4 +103,4 @@ See [Technology.md](Technology.md).
 ### Other
 - [The dashboard](https://pmmfs.github.io/)
 - [Dashboard repo](https://github.com/pmmfs/pmmfs.github.io) (Contains files used to create the dashboard.)
-- [Google Slides presentation](https://drive.google.com/file/d/1HMuLkLnpWYkOisW_-dmM1ByNWo0DIhGJ/view?usp=sharing) (Provides detailed information about the project.)
+- [Google Slides presentation](https://docs.google.com/presentation/d/1sH4ivyYJxLH2zuCJpQTzjlnWvE8RgMRwBxGjeOCTDVo/edit?usp=sharing) (Provides detailed information about the project.)
