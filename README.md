@@ -1,4 +1,4 @@
-# Capstone Project: Segment 2 Deliverables
+# Capstone Project On COVID-19
 
 ## Overview
 Our group (Martin Kaminskyj, Sami Elkhayri, Muzznah Ansari, Femi Adeleke, and Patricia Lan) chose to perform data analysis on coronavirus disease of 2019 (COVID-19). The topic of COVID-19 was chosen because it is a current, global issue with extensive socioeconomic impact, and public data is available. Thus, many approaches to analysis are possible. 
