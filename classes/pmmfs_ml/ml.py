@@ -97,8 +97,13 @@ class ml:
         # train the model
         train = self.nn_model.fit(self.X_train_scaled, self.y_train_scaled, epochs=self.epochs)
         
+        features = ""
+        for feature in self.feature_set:
+            if re.search("^[A-Z]\d",feature) != None:
+                features = features + "_" + feature[:2]
+        
         # Set the name of the graph file to be stored on disk
-        fig_name = "Resources/graphs/target-" + self.target + ",period:" + self.period + ",feature_set" + str(self.feature_set)
+        fig_name = "Resources/graphs/Loss_target-" + self.target + ",period-" + self.period + ",feature_set" + str(features)
         fig_name = fig_name.replace(" ","")    
         
         # Plot the train and test loss function and save the plot to disk
@@ -214,8 +219,8 @@ class ml:
         return self.period
     
     # This function returns the feature list of this ml instance
-    def get_features(self):
-        return self.features
+    def get_feature_set(self):
+        return self.feature_set
     
     # This function returns the target of this ml instance
     def get_target(self):
